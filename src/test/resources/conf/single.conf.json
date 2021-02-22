@@ -1,0 +1,21 @@
+{
+  "server": "hub-cloud.browserstack.com",
+  "user": "<BROWSERSTACK_USERNAME>",
+  "key": "<BROWSERSTACK_ACCESS_KEY>",
+  "capabilities": {
+    "browserstack.debug": false,
+    "browserstack.local": true,
+    "name": "BStackDemoTestNG",
+    "build": "BStack Build Number 1"
+  },
+  "environments": {
+    "chrome": {
+      "browser": "Chrome",
+      "browser_version": "latest"
+    },
+    "os": {
+      "os": "OS X",
+      "os_version": "Catalina"
+    }
+  }
+}
