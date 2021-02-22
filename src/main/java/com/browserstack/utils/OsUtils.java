@@ -7,7 +7,7 @@ public class OsUtils {
         if (OS == null) {
             OS = System.getProperty("os.name");
         }
-        return OS;
+        return OS.toLowerCase();
     }
 
     public static boolean isWindows() {
