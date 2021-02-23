@@ -31,7 +31,7 @@ public class LoginTest {
         }
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("http://localhost:3000");
+        driver.get("https://browserstack.com");
     }
 
     @AfterMethod
