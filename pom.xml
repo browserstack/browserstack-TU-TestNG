@@ -37,9 +37,9 @@
                 <configuration>
                     <systemPropertyVariables>
                         <environment>local</environment>
-                        <configfile>single.conf.json</configfile>
+                        <configfile>browserstack.conf.json</configfile>
                         <browser>chrome</browser>
-                        <url>http://localhost:3000</url>
+                        <url>https://bstackdemo.com</url>
                     </systemPropertyVariables>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
@@ -238,7 +238,7 @@
                         <configuration>
                             <systemPropertyVariables>
                                 <environment>docker</environment>
-                                <url>http://host.docker.internal:3000</url>
+                                <url>https://bstackdemo.com</url>
                             </systemPropertyVariables>
                             <includes>
                                 <include>com.browserstack.plain.LoginDataDrivenTest</include>
@@ -276,6 +276,33 @@
             </build>
         </profile>
         <profile>
+            <id>browserstack-parallel-multiple-browsers</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <systemPropertyVariables>
+                                <environment>remote</environment>
+                            </systemPropertyVariables>
+                            <properties>
+                                <property>
+                                    <name>listener</name>
+                                    <value>com.browserstack.BrowserstackTestStatusListener</value>
+                                </property>
+                            </properties>
+                            <parallel>tests</parallel>
+                            <threadCount>2</threadCount>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>testng-browserstack-parallel.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
             <id>docker-parallel</id>
             <build>
                 <plugins>
@@ -285,7 +312,7 @@
                         <configuration>
                             <systemPropertyVariables>
                                 <environment>docker</environment>
-                                <url>http://host.docker.internal:3000</url>
+                                <url>https://bstackdemo.com</url>
                             </systemPropertyVariables>
                             <parallel>classes</parallel>
                             <threadCount>2</threadCount>

@@ -20,6 +20,9 @@ public class OfferTest extends TestBase {
         getDriver().findElement(By.id("offers")).click();
         wait.until(ExpectedConditions.urlContains("offers"));
 
+
+
+
     }
 
 }

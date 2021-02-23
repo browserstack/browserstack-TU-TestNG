@@ -13,6 +13,10 @@
       "browser": "Chrome",
       "browser_version": "latest"
     },
+    "firefox": {
+      "browser": "Firefox",
+      "browser_version": "latest"
+    },
     "os": {
       "os": "OS X",
       "os_version": "Catalina"

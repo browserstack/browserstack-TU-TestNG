@@ -35,7 +35,7 @@ public class TestBase {
 
     @BeforeMethod
     @Parameters(value = {"configfile", "environment", "browser", "url"})
-    public void setUp(@Optional("single.conf.json") String configfile, @Optional("local") String environment, @Optional("chrome") String browser, @Optional("http://localhost:3000") String url) throws Exception {
+    public void setUp(@Optional("browserstack.conf.json") String configfile, @Optional("local") String environment, @Optional("chrome") String browser, @Optional("http://localhost:3000") String url) throws Exception {
         if (environment.equalsIgnoreCase("local")) {
             if (OsUtils.isMac()) {
                 System.setProperty("webdriver.chrome.driver", Path.of(chromeDriverBaseLocation, "/chromeDriverMac/chromedriver").toString());
@@ -82,7 +82,7 @@ public class TestBase {
 
             capabilities.setCapability("browserstack.appiumLogs", "false");
             capabilities.setCapability("browserstack.seleniumLogs", "false");
-//            capabilities.setCapability("browserstack.geoLocation", "GB");
+            capabilities.setCapability("browserstack.geoLocation", "IN");
 
             if (capabilities.getCapability("browserstack.local") != null
                     && capabilities.getCapability("browserstack.local") == "true") {
