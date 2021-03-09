@@ -11,15 +11,15 @@
   "environments": {
     "chrome": {
       "browser": "Chrome",
-      "browser_version": "latest"
+      "browser_version": "latest",
+      "os" : "Windows",
+      "os_version" : "10"
     },
     "firefox": {
       "browser": "Firefox",
-      "browser_version": "latest"
-    },
-    "os": {
-      "os": "OS X",
-      "os_version": "Catalina"
+      "browser_version": "latest",
+      "os" : "Windows",
+      "os_version" : "10"
     }
   }
 }
