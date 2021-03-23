@@ -17,3 +17,4 @@ testng.out.xml
 .DS_Store
 settings.json
 local.log
+.gradle/
